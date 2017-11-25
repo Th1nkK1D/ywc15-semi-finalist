@@ -1,10 +1,28 @@
 <template>
   <div class="mainpage">
-    <!-- <img src="../assets/logo.png" alt=""> -->
+    <!-- <img src="../assets/logo.png" alt="">
     <v-text-field solo v-model="searchKeyword" label="Search" append-icon="keyboard_voice" prepend-icon="search"></v-text-field>
     {{searchKeyword}}
     <br>
-    {{categorialList}}
+    {{categorialList}} -->
+
+    <v-layout column>
+      <v-flex class="header">
+        <img src="../assets/logo.png" alt="">
+
+        <v-layout row>
+          <v-flex></v-flex>
+          <v-flex xs6>
+            <v-text-field solo v-model="searchKeyword" label="Search" append-icon="keyboard_voice" prepend-icon="search"></v-text-field>
+          </v-flex>
+          <v-flex></v-flex>
+        </v-layout>
+        
+      </v-flex>
+      <v-flex class="content">
+        
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -37,6 +55,14 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss">
+.header {
+  text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 10px;
+  }
+}
 </style>
