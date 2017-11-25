@@ -2,7 +2,7 @@
   <v-card class="ma-1">
     <v-card-text>
       <v-layout row>
-        <div>
+        <div :class="major.color+'--text'">
           <strong class="intref">
             {{person.interviewRef.slice(0,2)}}
             <br>
@@ -23,7 +23,7 @@
 <script>
 export default {
   name: 'PersonCard',
-  props: ['person','interviewCutoff'],
+  props: ['person','major'],
 
   data() {
     return {
@@ -33,7 +33,7 @@ export default {
 
   computed: {
     interviewSection() {
-      return parseInt(this.person.interviewRef.slice(2,4)) <= this.interviewCutoff ? '9:00' : '13:00'
+      return parseInt(this.person.interviewRef.slice(2,4)) <= this.major.interviewCutoff ? '9:00' : '13:00'
     }
   }
 }
@@ -47,5 +47,6 @@ export default {
   .intref {
     font-size: 22px;
     line-height: 0;
+    opacity: 0.5;
   }
 </style>

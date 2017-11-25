@@ -6,7 +6,7 @@
       </div>
       <!-- Description -->
       <v-flex class="description ma-2">
-        <h1>{{major.alias}}</h1>        
+        <h1 :class="major.color+'--text'">{{major.alias}}</h1>        
 
         <v-expansion-panel class="elevation-0">
           <!-- HW panel -->
@@ -61,7 +61,7 @@
     <v-layout row wrap>
       <!-- Card flex -->
       <v-flex xs3 v-for="person in list" :key="person.interviewRef">
-        <person-card :person="person" :interviewCutoff="major.interviewCutoff"></person-card>
+        <person-card :person="person" :major="major"></person-card>
       </v-flex><!-- End of Card flex -->
     </v-layout>
   </v-layout>
