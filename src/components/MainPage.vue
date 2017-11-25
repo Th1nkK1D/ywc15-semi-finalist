@@ -37,7 +37,7 @@
 
               <v-tabs-items class="grey lighten-4" >
                 <v-tabs-content v-for="major in majors" :key="major" :id="major">
-                  <MajorContent :list="categorialList[major.toLowerCase()]"></MajorContent>
+                  <major-content :list="categorialList[major.toLowerCase()]"></major-content>
                 </v-tabs-content>
               </v-tabs-items>
             </v-tabs><!-- End of Majors Tab -->
@@ -69,10 +69,10 @@ export default {
   computed: {
     categorialList() {
       return {
-        content: this.response.filter(item => item.major === 'content' && (item.firstName.indexOf(this.searchKeyword) >= 0 || item.lastName.indexOf(this.searchKeyword) >= 0)),
-        marketing: this.response.filter(item => item.major === 'marketing' && (item.firstName.indexOf(this.searchKeyword) >= 0 || item.lastName.indexOf(this.searchKeyword) >= 0)),
-        design: this.response.filter(item => item.major === 'design' && (item.firstName.indexOf(this.searchKeyword) >= 0 || item.lastName.indexOf(this.searchKeyword) >= 0)),
-        programming: this.response.filter(item => item.major === 'programming' && (item.firstName.indexOf(this.searchKeyword) >= 0 || item.lastName.indexOf(this.searchKeyword) >= 0)),
+        content: this.response.filter(p => p.major === 'content' && (p.firstName.indexOf(this.searchKeyword) >= 0 || p.lastName.indexOf(this.searchKeyword) >= 0)),
+        marketing: this.response.filter(p => p.major === 'marketing' && (p.firstName.indexOf(this.searchKeyword) >= 0 || p.lastName.indexOf(this.searchKeyword) >= 0)),
+        design: this.response.filter(p => p.major === 'design' && (p.firstName.indexOf(this.searchKeyword) >= 0 || p.lastName.indexOf(this.searchKeyword) >= 0)),
+        programming: this.response.filter(p => p.major === 'programming' && (p.firstName.indexOf(this.searchKeyword) >= 0 || p.lastName.indexOf(this.searchKeyword) >= 0)),
       }
     },
   },

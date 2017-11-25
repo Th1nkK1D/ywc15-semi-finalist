@@ -7,21 +7,22 @@
 
     <v-layout row wrap>
       <!-- Card flex -->
-      <v-flex xs3 v-for="item in list" :key="item.interviewRef">
-        <v-card class="ma-1">
-          <v-card-text>
-            {{item}}
-          </v-card-text>
-        </v-card>
+      <v-flex xs3 v-for="person in list" :key="person.interviewRef">
+        <person-card :person="person"></person-card>
       </v-flex><!-- End of Card flex -->
     </v-layout>
   </v-layout>
 </template>
 
 <script>
+import PersonCard from './PersonCard'
+
 export default {
   name: 'MajorContent',
   props: ['list'],
+  components: {
+    PersonCard
+  },
   data () {
     return {
       

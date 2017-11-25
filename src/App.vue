@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <v-container fluid>
-        <MainPage/>
+        <main-page/>
       </v-container>
     </v-content>
   </v-app>
