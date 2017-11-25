@@ -25,15 +25,15 @@
             <v-tabs>
               <!-- Tab bar -->
               <v-tabs-bar class="grey lighten-4">
-                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" ripple>
-                  {{ major.alias }}
+                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" v-if="filteredList[major.name].length > 0" ripple>
+                  {{ major.alias }} ({{filteredList[major.name].length}})
                 </v-tabs-item>
                 <v-tabs-slider color="blue-grey"></v-tabs-slider>
               </v-tabs-bar><!-- End of Tab bar -->
 
               <v-tabs-items class="grey lighten-4" >
-                <v-tabs-content v-for="major in majors" :key="major.name" :id="major.name">
-                  <major-content :list="categorialList[major.name]" :major="major"></major-content>
+                <v-tabs-content v-for="major in majors" :key="major.name" :id="major.name" v-if="filteredList[major.name].length > 0">
+                  <major-content :list="filteredList[major.name]" :major="major"></major-content>
                 </v-tabs-content>
               </v-tabs-items>
             </v-tabs><!-- End of Majors Tab -->
@@ -68,7 +68,7 @@ export default {
   },
 
   computed: {
-    categorialList() {
+    filteredList() {
       return {
         content: this.response.filter(p => p.major === 'content' && (p.firstName.indexOf(this.searchKeyword) >= 0 || p.lastName.indexOf(this.searchKeyword) >= 0)),
         design: this.response.filter(p => p.major === 'design' && (p.firstName.indexOf(this.searchKeyword) >= 0 || p.lastName.indexOf(this.searchKeyword) >= 0)),
