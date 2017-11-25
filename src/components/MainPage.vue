@@ -25,14 +25,14 @@
             <v-tabs>
               <!-- Tab bar -->
               <v-tabs-bar class="grey lighten-4">
-                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" v-if="filteredList[major.name].length > 0" ripple>
+                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" v-if="response.length == 0 || filteredList[major.name].length > 0" ripple>
                   {{ major.alias }} ({{filteredList[major.name].length}})
                 </v-tabs-item>
                 <v-tabs-slider color="blue-grey"></v-tabs-slider>
               </v-tabs-bar><!-- End of Tab bar -->
 
               <v-tabs-items class="grey lighten-4" >
-                <v-tabs-content v-for="major in majors" :key="major.name" :id="major.name" v-if="filteredList[major.name].length > 0">
+                <v-tabs-content v-for="major in majors" :key="major.name" :id="major.name" v-if="response.length == 0 || filteredList[major.name].length > 0">
                   <major-content :list="filteredList[major.name]" :major="major"></major-content>
                 </v-tabs-content>
               </v-tabs-items>
@@ -63,7 +63,7 @@ export default {
         {name: 'programming', alias: 'Web Programming', icon: 'programming.png', color:'teal', interviewCutoff: 23, hw: 'ให้เขียน เว็บไซต์ประกาศผลผู้ผ่านเข้ารอบสัมภาษณ์ของ YWC#15 โดยใช้ข้อมูลจาก API โดยมี Feature ดังนี้ \n• ดึงข้อมูลจาก API โดยตรง \n• ให้แสดงผลแยกแต่ละสาขา \n• มีระบบค้นหาชื่อผ่านกล่อง Search \n• ความสามารถหรือ Feature พิเศษอื่น ๆ ที่มีความแตกต่าง และแสดงความสามารถของน้องออกมาให้ได้มากที่สุด \nเมื่อทำเสร็จแล้วให้ Push Source Code ขึ้น GitHub ก่อนเวลาสัมภาษณ์'},
         ],
       response: [],
-      searchKeyword: ''
+      searchKeyword: '',
     }
   },
 

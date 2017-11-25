@@ -1,10 +1,15 @@
 <template>
-  <v-app>
+  <v-app class="blue-grey darken-3 white--text">
     <v-content>
       <v-container fluid>
         <main-page/>
       </v-container>
     </v-content>
+    <v-footer class="pa-3 blue-grey darken-3">
+      <v-flex class="text-xs-center">
+        © Th1nk.K1D 2017 - <a class="white--text" href="https://github.com/Th1nkK1D/ywc15-semi-finalist">Github Repository</a>
+      </v-flex>
+    </v-footer>
   </v-app>
 </template>
 
@@ -19,9 +24,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  background-color: #2c3e50;
-  color: white;
-}
+<style lang="scss" scoped>
+
 </style>

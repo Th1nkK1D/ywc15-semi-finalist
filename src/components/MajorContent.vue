@@ -11,7 +11,7 @@
         <v-expansion-panel class="elevation-0">
           <!-- HW panel -->
           <v-expansion-panel-content :value="true" class="grey lighten-4"> 
-            <div slot="header"><h3>การบ้าน</h3></div>
+            <div slot="header"><h3><v-icon>inbox</v-icon> การบ้าน</h3></div>
             <v-card>
               <v-card-text class="grey lighten-3">
                 <p class="hw">{{major.hw}}</p>
@@ -20,7 +20,7 @@
           </v-expansion-panel-content><!-- End of HW panel -->
           <!-- Interview Panel-->
           <v-expansion-panel-content class="grey lighten-4">
-            <div slot="header"><h3>รายละเอียดการสัมภาษณ์</h3></div>
+            <div slot="header"><h3><v-icon>mic</v-icon> รายละเอียดการสัมภาษณ์</h3></div>
             <v-card>
               <v-card-text class="grey lighten-3">
                 <p>
