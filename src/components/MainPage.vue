@@ -28,8 +28,8 @@
             <!-- Majors Tab -->
             <v-tabs>
               <!-- Tab bar -->
-              <v-tabs-bar class="grey lighten-4" dark>
-                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" class="black--text" ripple>
+              <v-tabs-bar class="grey lighten-4">
+                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" ripple>
                   {{ major.alias }}
                 </v-tabs-item>
                 <v-tabs-slider color="cyan"></v-tabs-slider>

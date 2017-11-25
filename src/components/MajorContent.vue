@@ -1,11 +1,11 @@
 <template>
   <v-layout column class="ma-1">
     <v-layout row>
-      <v-flex xs3>
+      <div>
         <img :src="getImgUrl(major.icon)" alt="">
-      </v-flex>
+      </div>
       <!-- Description -->
-      <v-flex xs9 class="description ma-2">
+      <v-flex class="description ma-2">
         <h1>{{major.alias}}</h1>        
 
         <v-expansion-panel class="elevation-0">

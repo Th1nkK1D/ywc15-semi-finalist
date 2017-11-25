@@ -2,17 +2,17 @@
   <v-card class="ma-1">
     <v-card-text>
       <v-layout row>
-        <v-flex xs3>
-          <v-layout column>
-            <v-flex>
-              <strong>{{person.interviewRef}}</strong>
-            </v-flex>
-          </v-layout>
-        </v-flex>
+        <div>
+          <strong class="intref">
+            {{person.interviewRef.slice(0,2)}}
+            <br>
+            {{person.interviewRef.slice(2,4)}}
+          </strong>
+        </div>
         <v-flex>
           <v-layout column>
             <v-flex><strong>{{person.firstName}} {{person.lastName}}</strong></v-flex>
-            <v-flex>{{interviewSection}}</v-flex>
+            <v-flex><v-icon>access_time</v-icon> {{interviewSection}}</v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
@@ -33,12 +33,19 @@ export default {
 
   computed: {
     interviewSection() {
-      return parseInt(this.person.interviewRef.slice(2,4)) <= this.interviewCutoff ? 'เช้า 9:00' : 'บ่าย 13:00'
+      return parseInt(this.person.interviewRef.slice(2,4)) <= this.interviewCutoff ? '9:00' : '13:00'
     }
   }
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+  .icon {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .intref {
+    font-size: 22px;
+    line-height: 0;
+  }
 </style>
