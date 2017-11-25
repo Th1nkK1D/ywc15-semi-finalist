@@ -84,7 +84,7 @@ export default {
 
   mounted() {
     this.axios.get('https://ywc15.ywc.in.th/api/interview')
-    .then(response => {this.response = response.data})
+    .then(response => this.response = response.data.sort((a,b) => a.interviewRef.slice(2,4) - b.interviewRef.slice(2,4)))
   }
 }
 </script>
