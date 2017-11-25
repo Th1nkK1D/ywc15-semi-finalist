@@ -1,8 +1,12 @@
 <template>
   <v-layout column class="ma-1">
     <v-layout row>
-      <v-flex xs3>icon</v-flex>
-      <v-flex>description</v-flex>
+      <v-flex xs3>
+        <img :src="getImgUrl(major.icon)" alt="">
+      </v-flex>
+      <v-flex>
+        
+      </v-flex>
     </v-layout>
 
     <v-layout row wrap>
@@ -25,7 +29,13 @@ export default {
   },
   data () {
     return {
-      
+      url: 'content.png'
+    }
+  },
+  methods: {
+    getImgUrl(pet) {
+      var images = require.context('../assets/', false, /\.png$/)
+      return images('./' + pet)
     }
   }
 }

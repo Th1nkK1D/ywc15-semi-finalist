@@ -61,10 +61,10 @@ export default {
   data() {
     return {
       majors: [
-        {name: 'content', alias: 'Content', interviewCutoff: 25},
-        {name: 'marketing', alias: 'Marketing', interviewCutoff: 20},
-        {name: 'design', alias: 'Design', interviewCutoff: 18},
-        {name: 'programming', alias: 'Programming', interviewCutoff: 23},
+        {name: 'content', alias: 'Web Content', icon: 'content.png', interviewCutoff: 25},
+        {name: 'marketing', alias: 'Web Marketing', icon: 'marketing.png', interviewCutoff: 20},
+        {name: 'design', alias: 'Web Design', icon: 'design.png', interviewCutoff: 18},
+        {name: 'programming', alias: 'Web Programming', icon: 'programming.png', interviewCutoff: 23},
         ],
       response: [],
       searchKeyword: ''
