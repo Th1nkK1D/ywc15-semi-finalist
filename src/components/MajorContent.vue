@@ -1,12 +1,12 @@
 <template>
   <v-layout column class="ma-1">
-    <v-layout row>
-      <div>
-        <img :src="getImgUrl(major.icon)" alt="">
-      </div>
+    <v-layout row wrap>
+      <v-flex lg2 md3 sm4 xs12 class="text-xs-center">
+        <img style="width:90%; height:auto;" :src="getImgUrl(major.icon)" alt="">
+      </v-flex>
       <!-- Description -->
-      <v-flex class="description ma-2">
-        <h1 :class="major.color+'--text'">{{major.alias}}</h1>        
+      <v-flex lg9 md8 sm7 xs12 class="description ma-2">
+        <v-flex class="text-sm-left text-xs-center"><h1 :class="major.color+'--text'">{{major.alias}}</h1>  </v-flex>
 
         <v-expansion-panel class="elevation-0">
           <!-- HW panel -->
@@ -60,7 +60,7 @@
 
     <v-layout row wrap>
       <!-- Card flex -->
-      <v-flex xs3 v-for="person in list" :key="person.interviewRef">
+      <v-flex lg3 md4 sm6 xs12 v-for="person in list" :key="person.interviewRef">
         <person-card :person="person" :major="major"></person-card>
       </v-flex><!-- End of Card flex -->
     </v-layout>
@@ -76,11 +76,13 @@ export default {
   components: {
     PersonCard
   },
-  data () {
+
+  data() {
     return {
       url: 'content.png'
     }
   },
+  
   methods: {
     getImgUrl(pet) {
       var images = require.context('../assets/', false, /\.png$/)
