@@ -7,6 +7,7 @@
     {{categorialList}} -->
 
     <v-layout column>
+      <!-- Header -->
       <v-flex class="header">
         <img src="../assets/logo.png" alt="">
 
@@ -18,20 +19,48 @@
           <v-flex></v-flex>
         </v-layout>
         
-      </v-flex>
-      <v-flex class="content">
-        
-      </v-flex>
+      </v-flex><!-- End of Header -->
+      <!-- Content -->
+      <v-layout row class="content">
+        <v-flex></v-flex>
+        <v-flex xs10>
+          <v-card>
+            <!-- Majors Tab -->
+            <v-tabs>
+              <!-- Tab bar -->
+              <v-tabs-bar class="grey lighten-4" dark>
+                <v-tabs-item v-for="major in majors" :key="major" :href="'#' + major" class="black--text" ripple>
+                  {{ major }}
+                </v-tabs-item>
+                <v-tabs-slider color="cyan"></v-tabs-slider>
+              </v-tabs-bar><!-- End of Tab bar -->
+
+              <v-tabs-items class="grey lighten-4" >
+                <v-tabs-content v-for="major in majors" :key="major" :id="major">
+                  <MajorContent :list="categorialList[major.toLowerCase()]"></MajorContent>
+                </v-tabs-content>
+              </v-tabs-items>
+            </v-tabs><!-- End of Majors Tab -->
+          </v-card>
+        </v-flex>
+        <v-flex></v-flex>
+      </v-layout><!-- End of Content -->
     </v-layout>
   </div>
 </template>
 
 <script>
+import MajorContent from './MajorContent'
+
 export default {
   name: 'MainPage',
+  components: {
+    MajorContent
+  },
 
   data() {
     return {
+      majors: ['Content','Marketing','Design','Programming'],
       response: [],
       searchKeyword: ''
     }
@@ -58,6 +87,9 @@ export default {
 <style lang="scss">
 .header {
   text-align: center;
+  margin: 40px 0;
+
+
   img {
     width: 100%;
     height: auto;

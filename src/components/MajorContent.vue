@@ -1,12 +1,13 @@
 <template>
   <div>
-    
+    {{list}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TabContent',
+  name: 'MajorContent',
+  props: ['list'],
   data () {
     return {
       
