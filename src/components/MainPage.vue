@@ -1,20 +1,16 @@
 <template>
   <div class="mainpage">
-    <!-- <img src="../assets/logo.png" alt="">
-    <v-text-field solo v-model="searchKeyword" label="Search" append-icon="keyboard_voice" prepend-icon="search"></v-text-field>
-    {{searchKeyword}}
-    <br>
-    {{categorialList}} -->
-
     <v-layout column>
       <!-- Header -->
       <v-flex class="header">
         <img src="../assets/logo.png" alt="">
+        <h1>SEMI_FINAL ROUND</h1>
+        <h3>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์</h3>
 
-        <v-layout row>
+        <v-layout row class="mt-4">
           <v-flex></v-flex>
           <v-flex xs6>
-            <v-text-field solo v-model="searchKeyword" label="Search" append-icon="keyboard_voice" prepend-icon="search"></v-text-field>
+            <v-text-field solo v-model="searchKeyword" label="Search" prepend-icon="search" append-icon="close" :append-icon-cb="() => searchKeyword = ''"></v-text-field>
           </v-flex>
           <v-flex></v-flex>
         </v-layout>
@@ -85,7 +81,7 @@ export default {
   mounted() {
     this.axios.get('https://ywc15.ywc.in.th/api/interview')
     .then(response => this.response = response.data.sort((a,b) => a.interviewRef.slice(2,4) - b.interviewRef.slice(2,4)))
-  }
+  },
 }
 </script>
 
@@ -94,11 +90,10 @@ export default {
   text-align: center;
   margin: 40px 0;
 
-
   img {
     width: 100%;
     height: auto;
-    max-width: 300px;
+    max-width: 200px;
     margin: 10px;
   }
 }
