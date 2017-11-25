@@ -4,8 +4,10 @@
       <v-flex xs3>
         <img :src="getImgUrl(major.icon)" alt="">
       </v-flex>
-      <v-flex>
-        
+      <v-flex class="description">
+        <h1>{{major.alias}}</h1>
+        <h3>การบ้าน</h3>
+        <p>{{major.hw}}</p>
       </v-flex>
     </v-layout>
 
@@ -41,6 +43,13 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+.description {
+  p {
+    margin-left: 10px;
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+    font-family: inherit;
+  }
+}
 </style>

@@ -61,10 +61,10 @@ export default {
   data() {
     return {
       majors: [
-        {name: 'content', alias: 'Web Content', icon: 'content.png', interviewCutoff: 25},
-        {name: 'marketing', alias: 'Web Marketing', icon: 'marketing.png', interviewCutoff: 20},
-        {name: 'design', alias: 'Web Design', icon: 'design.png', interviewCutoff: 18},
-        {name: 'programming', alias: 'Web Programming', icon: 'programming.png', interviewCutoff: 23},
+        {name: 'content', alias: 'Web Content', icon: 'content.png', interviewCutoff: 25, hw: 'ให้น้อง ๆ เลือกทำคอนเทนต์ใด คอนเทนต์หนึ่งจาก 2 หัวข้อด้านล่าง โดยต้องทำเป็นคอนเทนต์ออกมาจริงเท่านั้น ไม่จำกัดรูปแบบการนำเสนอหัวข้อที่ให้เลือก \n1. คอนเทนต์ที่ทำให้ผู้ใช้ Social เข้าใจ Cyberbullying และตระหนักถึงปัญหาที่เกิดขึ้นจาก Cyberbullying \n2. คอนเทนต์ที่ทำให้คนไทยเปลี่ยนพฤติกรรมเสพติดหน้าจอ เสพติด Social หันมาพูดคุยกัน เจอหน้ากันในชีวิตจริง ๆ มากกว่าที่เป็นอยู่'},
+        {name: 'marketing', alias: 'Web Marketing', icon: 'marketing.png', interviewCutoff: 20, hw: 'ให้ผู้ผ่านเข้ารอบสัมภาษณ์ออกแบบเว็บไซต์ของ "คณะรักษาความสงบแห่งชาติ หรือ คสช." เพื่อเป็นสื่อกลางในการประชาสัมพันธ์นโยบายต่าง ๆ และเป็นสื่อกลางระหว่างประชาชนกับคณะรักษาความสงบแห่งชาติ โดยให้ออกแบบในลักษณะของ One Page Design Website \n** สำหรับผู้ผ่านเข้ารอบสัมภาษณ์คนใดทำ CSS มา คณะกรรมการจะพิจารณาเป็นพิเศษ'},
+        {name: 'design', alias: 'Web Design', icon: 'design.png', interviewCutoff: 18, hw: 'ให้ทำแผนการตลาด (Marketing Plan) สำหรับเว็บไซต์หนึ่งเว็บไซต์ โดยเลือกเว็บไซต์ใด ๆ ก็ได้ ทั้งเว็บไซต์ของไทยและเว็บไซต์ของต่างประเทศ \nนำเสนอในรูปแบบพรีเซนเทชั่น ไม่เกิน 10 หน้า ภายในเวลา 5 นาที'},
+        {name: 'programming', alias: 'Web Programming', icon: 'programming.png', interviewCutoff: 23, hw: 'ให้เขียน เว็บไซต์ประกาศผลผู้ผ่านเข้ารอบสัมภาษณ์ของ YWC#15 โดยใช้ข้อมูลจาก API โดยมี Feature ดังนี้ \n• ดึงข้อมูลจาก API โดยตรง \n• ให้แสดงผลแยกแต่ละสาขา \n• มีระบบค้นหาชื่อผ่านกล่อง Search \n• ความสามารถหรือ Feature พิเศษอื่น ๆ ที่มีความแตกต่าง และแสดงความสามารถของน้องออกมาให้ได้มากที่สุด \nเมื่อทำเสร็จแล้วให้ Push Source Code ขึ้น GitHub ก่อนเวลาสัมภาษณ์'},
         ],
       response: [],
       searchKeyword: ''
