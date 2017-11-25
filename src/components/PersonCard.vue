@@ -12,7 +12,7 @@
         <v-flex>
           <v-layout column>
             <v-flex><strong>{{person.firstName}} {{person.lastName}}</strong></v-flex>
-            <v-flex>สัมภาษณ์รอบเช้า</v-flex>
+            <v-flex>{{interviewSection}}</v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
@@ -23,10 +23,17 @@
 <script>
 export default {
   name: 'PersonCard',
-  props: ['person'],
-  data () {
+  props: ['person','interviewCutoff'],
+
+  data() {
     return {
 
+    }
+  },
+
+  computed: {
+    interviewSection() {
+      return parseInt(this.person.interviewRef.slice(2,4)) <= this.interviewCutoff ? 'เช้า 9:00' : 'บ่าย 13:00'
     }
   }
 }

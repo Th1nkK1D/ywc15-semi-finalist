@@ -29,15 +29,15 @@
             <v-tabs>
               <!-- Tab bar -->
               <v-tabs-bar class="grey lighten-4" dark>
-                <v-tabs-item v-for="major in majors" :key="major" :href="'#' + major" class="black--text" ripple>
-                  {{ major }}
+                <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" class="black--text" ripple>
+                  {{ major.alias }}
                 </v-tabs-item>
                 <v-tabs-slider color="cyan"></v-tabs-slider>
               </v-tabs-bar><!-- End of Tab bar -->
 
               <v-tabs-items class="grey lighten-4" >
-                <v-tabs-content v-for="major in majors" :key="major" :id="major">
-                  <major-content :list="categorialList[major.toLowerCase()]"></major-content>
+                <v-tabs-content v-for="major in majors" :key="major.name" :id="major.name">
+                  <major-content :list="categorialList[major.name]" :major="major"></major-content>
                 </v-tabs-content>
               </v-tabs-items>
             </v-tabs><!-- End of Majors Tab -->
@@ -60,7 +60,12 @@ export default {
 
   data() {
     return {
-      majors: ['Content','Marketing','Design','Programming'],
+      majors: [
+        {name: 'content', alias: 'Content', interviewCutoff: 25},
+        {name: 'marketing', alias: 'Marketing', interviewCutoff: 20},
+        {name: 'design', alias: 'Design', interviewCutoff: 18},
+        {name: 'programming', alias: 'Programming', interviewCutoff: 23},
+        ],
       response: [],
       searchKeyword: ''
     }

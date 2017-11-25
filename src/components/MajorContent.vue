@@ -8,7 +8,7 @@
     <v-layout row wrap>
       <!-- Card flex -->
       <v-flex xs3 v-for="person in list" :key="person.interviewRef">
-        <person-card :person="person"></person-card>
+        <person-card :person="person" :interviewCutoff="major.interviewCutoff"></person-card>
       </v-flex><!-- End of Card flex -->
     </v-layout>
   </v-layout>
@@ -19,7 +19,7 @@ import PersonCard from './PersonCard'
 
 export default {
   name: 'MajorContent',
-  props: ['list'],
+  props: ['list','major'],
   components: {
     PersonCard
   },
