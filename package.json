@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Withee Poositasai <witheep@gmail.com>",
-  "homepage": "https://th1nkk1d.github.io/ywc15-semi-finalist/",
+  "homepage": "https://github.com/Th1nkK1D/ywc15-semi-finalist",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -61,6 +62,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "deploy": "node ./node_modules/vue-gh-pages/index.js"
+  ]
 }
