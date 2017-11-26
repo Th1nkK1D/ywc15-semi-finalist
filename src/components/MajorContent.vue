@@ -58,9 +58,14 @@
       </v-flex><!-- End of Description -->
     </v-layout>
 
+    <!-- Name sort toggle -->
+    <v-flex class="ml-2 name-sort">
+      <v-switch label="Sort by Name" v-model="nameSort" hide-details></v-switch>
+    </v-flex><!-- End of Name sort toggle -->
+
     <v-layout row wrap>
       <!-- Card flex -->
-      <v-flex lg3 md4 sm6 xs12 v-for="person in list" :key="person.interviewRef">
+      <v-flex lg3 md4 sm6 xs12 v-for="person in sortedList" :key="person.interviewRef">
         <person-card :person="person" :major="major"></person-card>
       </v-flex><!-- End of Card flex -->
     </v-layout>
@@ -79,7 +84,7 @@ export default {
 
   data() {
     return {
-      url: 'content.png'
+      nameSort: false
     }
   },
   
@@ -87,6 +92,12 @@ export default {
     getImgUrl(pet) {
       var images = require.context('../assets/', false, /\.png$/)
       return images('./' + pet)
+    }
+  },
+
+  computed: {
+    sortedList() {
+      return this.nameSort ? this.list.sort((a,b) => a.firstName.localeCompare(b.firstName)) : this.list.sort((a,b) => a.interviewRef.slice(2,4) - b.interviewRef.slice(2,4))
     }
   }
 }
@@ -100,5 +111,6 @@ export default {
     word-wrap: break-word;
     font-family: inherit;
   }
+
 }
 </style>
