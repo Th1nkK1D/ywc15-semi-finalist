@@ -9,7 +9,7 @@
 
         <v-layout row class="mt-4">
           <v-flex></v-flex>
-          <v-flex xs6>
+          <v-flex xs10 md6>
             <v-text-field solo v-model="searchKeyword" label="Search" prepend-icon="search" append-icon="close" :append-icon-cb="() => searchKeyword = ''"></v-text-field>
           </v-flex>
           <v-flex></v-flex>
@@ -18,8 +18,8 @@
       </v-flex><!-- End of Header -->
       <!-- Content -->
       <v-layout row class="content">
-        <v-flex></v-flex>
-        <v-flex xs10>
+        <v-flex hidden-xs-only></v-flex>
+        <v-flex xs12 sm11 md10>
           <v-card>
             <!-- Majors Tab -->
             <v-tabs>
@@ -39,7 +39,7 @@
             </v-tabs><!-- End of Majors Tab -->
           </v-card>
         </v-flex>
-        <v-flex></v-flex>
+        <v-flex hidden-xs-only></v-flex>
       </v-layout><!-- End of Content -->
     </v-layout>
   </div>
