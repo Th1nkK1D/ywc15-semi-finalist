@@ -22,7 +22,7 @@
         <v-flex xs12 sm11 md10>
           <v-card>
             <!-- Majors Tab -->
-            <v-tabs>
+            <v-tabs v-if="filteredList.content.length > 0 || filteredList.design.length > 0 || filteredList.marketing.length > 0 || filteredList.programming.length > 0">
               <!-- Tab bar -->
               <v-tabs-bar class="grey lighten-4">
                 <v-tabs-item v-for="major in majors" :key="major.name" :href="'#' + major.name" v-if="response.length == 0 || filteredList[major.name].length > 0" ripple>
@@ -37,6 +37,9 @@
                 </v-tabs-content>
               </v-tabs-items>
             </v-tabs><!-- End of Majors Tab -->
+            <div class="pa-4 text-xs-center" v-else>
+              ไม่พบผลการค้นหา
+            </div>
           </v-card>
         </v-flex>
         <v-flex hidden-xs-only></v-flex>
